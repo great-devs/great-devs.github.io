@@ -1,23 +1,26 @@
-/*
-    START: Global
+/* START: Global
 */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+    font-family: "Poppins", sans-serif;
 }
 
 body {
     min-height: 100%;
     background: #e3f2fd;
 }
-/*
-    END: Global
+
+h4, h6 {
+    color: white;
+}
+/* END: Global
 */
 
-/*
-    START: Navbar
+/* START: Navbar
 */
 /*Untuk tampilan nav top */
 nav {
@@ -30,7 +33,7 @@ nav {
     align-items: center;
     background: #2e4b85;
     justify-content: center;
-    box-shadow: 0 0 1px rgba(0, 0, 0, 0.1);
+    box-shadow: 4px 8px 10px rgba(0, 0, 0, 0.158);
 }
 
 nav .logo {
@@ -51,7 +54,7 @@ nav .logo {
 .logo .logo-name {
     color: white;
     font-size: 30px;
-    font-weight: bold;
+    font-weight: 500px;
 }
 
 .sidebar .logo {
@@ -144,12 +147,10 @@ nav.open ~ .overlay {
     left: 40%;
     pointer-events: auto;
 }
-/*
-    END: Navbar
+/* END: Navbar
 */
 
-/*
-    START: Main Content
+/* START: Main Content
 */
 .main-content {
     margin-top: 70px;
@@ -160,34 +161,86 @@ nav.open ~ .overlay {
     height: 150px;
     width: 150px;
 }
-/*
-    END: Main Content
+/* END: Main Content
 */
 
-/* 
-    START: Footer
+/* START: Footer
+*/
+/* END: Footer
 */
 
-/* 
-    END: Footer
+/* Projects
 */
 
-.project-content {
-    height: 500px;
-    overflow: auto;
+/* Untuk scrollbar
+::-webkit-scrollbar {
+    height: 10px;
+    width: 4px;
+    background-color: white;
+    border-radius: 20px;
+}
+
+::-webkit-scrollbar-thumb {
     background-color: #4070f4;
-}
+    border-radius: 20px;
+} */
 
-.bg-card {
-    align-content: center;
+.project-container .text-center .projects .project {
     border-radius: 10px;
-    background-color: silver;
+    box-shadow: rgba(0, 0, 0, 0.699);
+    height: 250px;
+    width: 350px;
+    display: inline-block;
+    align-content: center;
+    background-color: #e3f2fd;
     margin: 20px;
-    height: 300px;
-    width: 300px;
+    padding: 0;
 }
 
-.bg-card h6 {
-    text-align: center;
+.project-container .text-center .projects .project img {
+    fill: cover;
+    border-radius: 10px;
+    height: 250px;
+    width: 350px;
+}
+
+.project-container .text-center .projects .project .title {
+    text-align: left;
+    height: 50px;
+    width: 350px;
+    margin-bottom: 0;
+}
+.project-container .text-center .projects .project .title p {
     color: white;
+    font-size: 19px;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+.project-container .text-center .projects .project .link {
+    text-align: left;
+    width: auto;
+    height: 30px;
+    margin: 0;
+    padding: 0;
+}
+
+.project-container .text-center .projects .project div button {
+    margin: 0;
+    padding: 0;
+    left: 0;
+    height: 30px;
+    width: auto;
+    background-color: salmon;
+    border-radius: 10px;
+    border: none;
+}
+
+.project-container .text-center .projects .project div button a {
+    margin: 8px;
+    color: white;
+    text-decoration: none;
 }
