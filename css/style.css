@@ -14,7 +14,7 @@ body {
     background: #e3f2fd;
 }
 
-h4, h6 {
+h2, h4, h6 {
     color: white;
 }
 /* END: Global
@@ -155,11 +155,64 @@ nav.open ~ .overlay {
 .main-content {
     margin-top: 70px;
 }
-
+.main-content header {
+    background-color: rgb(37, 39, 66)
+}
 .profile-image .profile-icon {
     align-items: center;
     height: 150px;
     width: 150px;
+}
+
+
+
+.content-tutor {
+    width: 100%;
+    height: auto;
+    background: rgb(29, 31, 54);
+    padding: 20px;
+}
+.content-tutor-info h6 {
+    color: aqua;
+}
+.content-tutorial-main {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+}
+.content-tutorial {
+    flex: 1;
+    height: auto;
+    background: rgb(37, 39, 66);
+    border-radius: 10px;
+    margin: 10px;
+    padding: 20px;
+}
+.content-tutorial a {
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+}
+.content-tutorial img {
+    height: 50px;
+    width: 50px;
+}
+.content-tutorial h6 {
+    margin-top: 15px;
+}
+.content-tutorial p {
+    color: white;
+    font-size: 15px;
+}
+/* Change for mobile */
+@media screen and (max-width: 700px) {
+    .content-tutorial-main {
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+    }
 }
 /* END: Main Content
 */
