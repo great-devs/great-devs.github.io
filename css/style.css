@@ -174,13 +174,13 @@ nav.open ~ .overlay {
 .main-content .content-tutor .content-tutor-info h6 {
     color: aqua;
 }
-.main-content .content-tutor .content-tutorial-main {
+.main-content .content-tutor .content-main {
     width: 100%;
     height: auto;
     display: flex;
     flex-direction: row;
 }
-.main-content .content-tutor .content-tutorial-main .content-tutorial {
+.main-content .content-tutor .content-main .content-tutorial {
     flex: 1;
     height: auto;
     background: rgb(37, 39, 66);
@@ -188,34 +188,135 @@ nav.open ~ .overlay {
     margin: 10px;
     padding: 20px;
 }
-.main-content .content-tutor .content-tutorial-main .content-tutorial:hover {
+.main-content .content-tutor .content-main .content-tutorial:hover {
     background: rgb(51, 54, 99);
 }
-.main-content .content-tutor .content-tutorial-main .content-tutorial a {
+.main-content .content-tutor .content-main .content-tutorial a {
     width: 100%;
     height: 100%;
     text-decoration: none;
 }
-.main-content .content-tutor .content-tutorial-main .content-tutorial img {
+.main-content .content-tutor .content-main .content-tutorial img {
     height: 50px;
     width: 50px;
 }
-.main-content .content-tutor .content-tutorial-main .content-tutorial h6 {
+.main-content .content-tutor .content-main .content-tutorial h6 {
     margin-top: 15px;
 }
-.main-content .content-tutor .content-tutorial-main .content-tutorial p {
+.main-content .content-tutor .content-main .content-tutorial p {
     color: white;
     font-size: 15px;
 }
 /* Change for mobile */
 @media screen and (max-width: 700px) {
-    .main-content .content-tutor .content-tutorial-main {
+    .main-content .content-tutor .content-main {
         width: 100%;
         height: auto;
         display: flex;
         flex-direction: column;
     }
 }
+
+/* Update */
+.main-content .content-tutor .content-new-main,
+.main-content .content-tutor .content-new-main > div {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+.main-content .content-tutor .content-new-main .content-new {
+    flex: 1;
+    height: auto;
+    background: rgb(37, 39, 66);
+    border-radius: 10px;
+    margin: 10px;
+    padding: 20px;
+    border-bottom: 3px solid aqua;
+}
+.main-content .content-tutor .content-new-main .content-new:hover {
+    background: rgb(51, 54, 99);
+}
+.main-content .content-tutor .content-new-main .content-new a {
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+}
+.main-content .content-tutor .content-new-main .content-new img {
+    border-radius: 10px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    height: 200px;
+}
+.main-content .content-tutor .content-new-main .content-new h5 {
+    margin-top: 15px;
+    font-weight: bold;
+    color: white;
+}
+.main-content .content-tutor .content-new-main .content-new p {
+    color: white;
+    font-size: 15px;
+}
+
+/* 
+Pada css penyataan yang paling bawah akan diprioritaskan, contoh.
+div {
+    background: #000;
+}
+
+div {
+    background: orange;
+}
+maka div dengan set background orange lebih tinggi prioritasnya dan
+dieksekusi, sementara div sebelum akan di timpa.
+*/
+
+@media screen and (max-width: 1050px) {
+    .main-content .content-tutor .content-new-main .content-new {
+        width: 330px;
+        flex: none;
+        height: auto;
+        background: rgb(37, 39, 66);
+        border-radius: 10px;
+        margin: 10px;
+        padding: 20px;
+        border-bottom: 3px solid aqua;
+    }
+}
+@media screen and (max-width: 760px) {
+    .main-content .content-tutor .content-new-main .content-new {
+        width: 300px;
+        height: auto;
+        background: rgb(37, 39, 66);
+        border-radius: 10px;
+        margin: 10px;
+        padding: 20px;
+        border-bottom: 3px solid aqua;
+    }
+}
+@media screen and (max-width: 700px) {
+    .main-content .content-tutor .content-new-main {
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .main-content .content-tutor .content-new-main .content-new {
+        width: auto;
+        height: auto;
+        background: rgb(37, 39, 66);
+        border-radius: 10px;
+        margin: 10px;
+        padding: 20px;
+        border-bottom: 3px solid aqua;
+    }
+}
+
 /* END: Main Content
 */
 
@@ -239,7 +340,10 @@ nav.open ~ .overlay {
     background-color: #4070f4;
     border-radius: 20px;
 } */
-
+.project-container .text-center .projects {
+    width: 100%;
+    height: auto;
+}
 .project-container .text-center .projects .project {
     border-radius: 10px;
     box-shadow: rgba(0, 0, 0, 0.699);
@@ -251,7 +355,6 @@ nav.open ~ .overlay {
     margin: 20px;
     padding: 0;
 }
-
 .project-container .text-center .projects .project img {
     fill: cover;
     border-radius: 10px;
@@ -298,4 +401,15 @@ nav.open ~ .overlay {
     margin: 8px;
     color: white;
     text-decoration: none;
+}
+
+/* Ubah ke scrolling */
+@media screen and (max-width: 900px) {
+    .project-container .text-center .projects {
+        width: 100%;
+        height: auto;
+        overflow: auto;
+        white-space: nowrap;
+        padding-bottom: 10px;
+    }
 }
