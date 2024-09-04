@@ -1,0 +1,7 @@
+{
+    "html-to-css-autocompletion.autocompletionFilesScope": "workspace",
+    "html-to-css-autocompletion.getSelectorsFromFileTypes": [
+        "new"
+    ],
+    "html-to-css-autocompletion.triggerCharacters": true
+}

@@ -3,7 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Great Devs | Become Great Developers</title>
+    <title>Great Devs | Java OOP Class/Objects </title>
+
+    <!-- Hightlight JS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <!-- and it's easy to individually load additional languages -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/go.min.js"></script>
+    <script>hljs.highlightAll();</script>
+
     <style type="text/css">
         @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
@@ -12,8 +20,21 @@
             margin: 0;
             font-family: "Poppins", sans-serif;
             text-decoration: none;
-            list-style: none;
         }
+
+        h1, h2, h3, h4, h5, h6 {
+            color: #24292E;
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        .hightlight-1 {
+            background-image: linear-gradient(to right, rgb(248, 126, 112), rgb(223, 223, 223));
+            padding: 20px;
+        }
+
 
         .text-title {
             font-size: 24px;
@@ -24,13 +45,49 @@
             font-size: 18px;
         }
 
+        .fz-medium {
+            font-size: 22px;
+        }
+
+        .fz-big {
+            font-size: 30px;
+        }
+
+        .img-fw {
+            width: 100%;
+            height: auto;
+        }
+
+        .fw-bold {
+            font-weight: bold;
+        }
+
+        .code-mark {
+            background-color: rgb(206, 206, 206);
+            color: rgb(209, 93, 93);
+            border-radius: 5px;
+            padding-left: 5px;
+            padding-right: 5px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        pre code.hljs {
+            padding-top: 0;
+            padding-bottom: 0;
+            border-left: solid salmon 5px;
+            font-size: 15px;
+        }
+
+        .ls-n {
+            list-style: none;
+        }
+
         .c-salmon { color: salmon; }
         .c-black-soft { color: rgb(77, 77, 77); }
         .c-black-main { color: #24292E; }
         .c-white { color: white;}
         .c-white-soft { color: rgb(219, 219, 219);}
         
-
         .footer-text-title {
             font-size: 22px;
             font-weight: 400;
@@ -126,71 +183,37 @@
             background-color: rgba(189, 189, 189, 0.486);
         }
 
+        .space {
+            width: 100%;
+            height: 90px;
+        }
+
         /* Content Tutor */
         main {
             width: auto;
             height: auto;
             background: rgb(223, 223, 223);
-            padding: 20px;
         }
         main .main-base {
-            margin-top: 90px;
-            width: 100%;
+            width: auto;
             height: auto;
+            padding: 20px;
         }
-        main .main-base .content-tutor-info h6 {
-            color: #24292E;
-        }
-        main .main-base .content-main {
+        main .main-base .main-articles {
             width: 100%;
             height: auto;
             display: flex;
             flex-direction: row;
         }
-        main .main-base .content-main .content-tutorial {
-            flex: 1;
+        main .main-base .main-articles .left {
             height: auto;
-            background: white;
-            border-radius: 10px;
-            border-left: solid 5px salmon;
-            margin: 10px;
-            padding: 20px;
+            flex: 25%;
         }
-        main .main-base .content-main .content-tutorial:hover {
-            background: salmon;
+        main .main-base .main-articles .middle {
+            height: auto;
+            flex: 75%;
         }
-        main .main-base .content-main .content-tutorial a {
-            width: 100%;
-            height: 100%;
-            text-decoration: none;
-        }
-        main .main-base .content-main .content-tutorial img {
-            height: 50px;
-            width: 50px;
-        }
-        main .main-base .content-main .content-tutorial:hover h5 {
-            color: white;
-        }
-        main .main-base .content-main .content-tutorial h5 {
-            color: #24292E;
-            margin-top: 15px;
-        }
-        main .main-base .content-main .content-tutorial:hover p {
-            color: white;
-        }
-        main .main-base .content-main .content-tutorial p {
-            color: #24292E;
-            font-size: 18px;
-        }
-        /* Change for mobile */
-        @media screen and (max-width: 700px) {
-            main .main-base .content-main {
-                width: 100%;
-                height: auto;
-                display: flex;
-                flex-direction: column;
-            }
-        }
+
 
 
         footer {
@@ -205,7 +228,7 @@
         footer .footer-middle {
             margin-top: 40px;
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(550px, auto));
+            grid-template-columns: repeat(auto-fill, minmax(0, 400px, auto));
             gap: 20px;
         }
         footer .footer-bottom {
@@ -236,6 +259,13 @@
                 display: none;
             }
 
+            main .main-base .main-articles .left {
+                margin-bottom: 20px;
+            }
+            main .main-base .main-articles {
+                flex-direction: column;
+            }
+
             footer .footer-middle {
                 
             }
@@ -260,10 +290,10 @@
 
             <div class="nav-menu-base">
                 <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="tutorial.html">Tutorials</a></li>
-                    <li><a href="projek.html">Projects</a></li>
-                    <li><a href="about-us.html">About Us</a></li>
+                    <li><a href="https://great-devs.github.io/index.html">Home</a></li>
+                    <li><a href="https://great-devs.github.io/tutorial.html">Tutorials</a></li>
+                    <li><a href="https://great-devs.github.io/projek.html">Projects</a></li>
+                    <li><a href="https://great-devs.github.io/about-us.html">About Us</a></li>
                 </ul>
             </div>
 
@@ -304,43 +334,68 @@
         </div>
     </header>
 
-    <div id="overlay" class="overlay" onclick="oc_overlay()"></div>
+
+    <!-- <div id="overlay" class="overlay" onclick="oc_overlay()"></div> -->
+    <div class="space"></div>
 
     <main>
+        <p class="fz-big fw-bold c-black-soft hightlight-1">Java OOP | Class/Objects</p>
         <div class="main-base">
-            <div class="content-tutor-info">
-                <h6>TUTORIAL</h6>
-                <h2>Hari ini tutorial apa?</h2>
-            </div>
-            <br>
-            <div class="content-main">
-                <div class="content-tutorial programming">
-                    <a href="">
-                        <img src="resources/icon/ic_code_1.png" alt="">
-                        <h5>Pemprograman</h5>
-                        <p>Berisi tutorial bahasa pemprograman seperti C++, Java, Python, HTML, dsb. Secara gratis.</p>
-                    </a>
+
+            <div class="main-articles">    
+                <div class="left">
+                    <p class="fz-medium fw-bold c-black-soft">Daftar Isi</p>
                 </div>
-    
-                <div class="content-tutorial web-programming">
-                    <a href="">
-                        <img src="resources/icon/ic_web_design.png" alt="">
-                        <h5>Pemprograman Web</h5>
-                        <p>Berisi tutorial pemprograman untuk <i>development</i> web. Secara gratis.</p>
-                    </a>
-                </div>
-    
-                <div class="content-tutorial other-tutor">
-                    <a href="">
-                        <img src="resources/icon/ic_layer_doc.png" alt="">
-                        <h5>Tutorial Lainnya</h5>
-                        <p>Untuk tutorial lainnya seperti Mobile Programming, IoT, Game Programming, dan masih banyak lagi tentunya secara gratis.</p>
-                    </a>
+
+                <div class="middle">
+                    <P>
+                        Kelas dalam OOP adalah sebuah representasi objek yang akan dibuat, semisal kita ingin membuat objek mobil, 
+                        maka kita kelas representasi tersebut kita namai <i>Car</i>. Untuk objek adalah hasil dari kelas tersebut yang
+                        nantinya kita bisa gunakan. Objek memiliki masa hidup, umumnya objek akan ada ketika aplikasi/sistem berlajar atau
+                        sedang digunakan & akan mati/hancur ketika aplikasi berhenti digunakan.
+                    </P>
+                    <br>
+                    <h2>Membuat Kelas</h2>
+                    <p>
+                        Untuk membuat kelas semisal <i>Car</i>.
+                        <pre><code class="language-java">
+class Car {
+    ...
+}
+                        </code></pre>
+                        Ket.
+                        <ul>
+                            <li>class | <i>Keyword</i> untuk membuat kelas</li>
+                            <li>Car | Nama kelas yang dibuat</li>
+                        </ul>
+                    </p>
+
+                    <br>
+                    <h2>Membuat Objek</h2>
+                    <p>
+                        Untuk membuat objek dari kelas yang telah kita buat, semisal kita ingin membuat objek dari kelas <i>Car</i> diatas.
+                        <pre><code class="language-java">
+Car myCar = new Car();
+                        </code></pre>
+                        Jika dengan kelas maka kita bisa membuat objek <i>Car</i> lagi dengan nama yang berbeda, nama harus beda.
+                        <pre><code class="language-java">
+Car momCar = new Car();
+Car dadCar = new Car();
+Car myCar = new Car();
+                        </code></pre>
+                        Untuk cara lain membuat objek.
+                        <pre><code class="language-java">
+new Car();
+                        </code></pre>
+                        Ini biasanya dilakukan di input parameter, jadi butuh objek namun hanya untuk menampung data atau hanya
+                        memerlukan suatu objekB untuk membuat objekA.
+                    </p>
+
                 </div>
             </div>
         </div>
-
     </main>
+
 
     <footer>
         <div class="footer-top">
@@ -356,7 +411,7 @@
         <div class="footer-middle">
             <div class="connection-base">
                 <h4 class="footer-text-title">Get Connections</h4>
-                <ul>
+                <ul class="ls-n">
                     <li><a href="" class="fz-smal c-salmon">Github</a></li>
                     <li><a href="" class="fz-smal c-salmon">Youtube</a></li>
                     <li><a href="" class="fz-smal c-salmon">Instagram</a></li>
@@ -364,7 +419,7 @@
             </div>
             <div class="legal-base">
                 <p class="footer-text-title">Legal</p>
-                <ul>
+                <ul class="ls-n">
                     <li><a href="legal/privacy-policy.html" class="fz-smal c-salmon">Privacy Policy</a></li>
                 </ul>
             </div>
@@ -373,6 +428,10 @@
             <p>©2024 Great Devs</p>
         </div>
     </footer>
+
+
+    <!-- BLOCK Javascript -->
+
 
     <script>
         function oc_menu() {
