@@ -3,7 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Great Devs | Become Great Developers</title>
+    <title>Glowy Engineer | Java OOP Attribute</title>
+    <link rel="icon" href="../../resources/icon/ic_glowy_engineer.png" type="image/x-icon">
+    <!-- Hightlight JS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlightjs-themes@1.0.0/darkula.css"> -->
+    <link rel="stylesheet" href="../../hightlightjs/theme/atom-one-dark.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <!-- and it's easy to individually load additional languages -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/go.min.js"></script>
+    <script>hljs.highlightAll();</script>
+
     <style type="text/css">
         @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
@@ -12,8 +22,21 @@
             margin: 0;
             font-family: "Poppins", sans-serif;
             text-decoration: none;
-            list-style: none;
         }
+
+        ul, ol {
+            margin-left: 20px;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            color: #24292E;
+        }
+
+        .hightlight-1 {
+            background-image: linear-gradient(to right, rgb(248, 126, 112), rgb(223, 223, 223));
+            padding: 20px;
+        }
+
 
         .text-title {
             font-size: 24px;
@@ -24,13 +47,49 @@
             font-size: 18px;
         }
 
+        .fz-medium {
+            font-size: 22px;
+        }
+
+        .fz-big {
+            font-size: 30px;
+        }
+
+        .img-fw {
+            width: 100%;
+            height: auto;
+        }
+
+        .fw-bold {
+            font-weight: bold;
+        }
+
+        .code-mark {
+            background-color: rgb(206, 206, 206);
+            color: rgb(209, 93, 93);
+            border-radius: 5px;
+            padding-left: 5px;
+            padding-right: 5px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        pre code.hljs {
+            padding-top: 0;
+            padding-bottom: 0;
+            border-left: solid salmon 5px;
+            font-size: 15px;
+        }
+
+        .ls-n {
+            list-style: none;
+        }
+
         .c-salmon { color: salmon; }
         .c-black-soft { color: rgb(77, 77, 77); }
         .c-black-main { color: #24292E; }
         .c-white { color: white;}
         .c-white-soft { color: rgb(219, 219, 219);}
         
-
         .footer-text-title {
             font-size: 22px;
             font-weight: 400;
@@ -126,16 +185,21 @@
             background-color: rgba(189, 189, 189, 0.486);
         }
 
+        .space {
+            width: 100%;
+            height: 90px;
+        }
+
+
         /* Content Tutor */
         main {
             width: auto;
             height: auto;
             background: rgb(223, 223, 223);
-            padding: 20px;
         }
         main .main-base {
-            margin-top: 90px;
-            width: 100%;
+            padding: 20px;
+            width: auto;
             height: auto;
         }
         main .main-base .content-tutor-info h6 {
@@ -185,13 +249,10 @@
         /* Change for mobile */
         @media screen and (max-width: 700px) {
             main .main-base .content-main {
-                width: 100%;
-                height: auto;
                 display: flex;
                 flex-direction: column;
             }
         }
-
 
         footer {
             padding: 30px;
@@ -205,7 +266,7 @@
         footer .footer-middle {
             margin-top: 40px;
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(550px, auto));
+            grid-template-columns: repeat(auto-fill, minmax(0, 400px, auto));
             gap: 20px;
         }
         footer .footer-bottom {
@@ -236,6 +297,13 @@
                 display: none;
             }
 
+            main .main-base .main-articles .left {
+                margin-bottom: 20px;
+            }
+            main .main-base .main-articles {
+                flex-direction: column;
+            }
+
             footer .footer-middle {
                 
             }
@@ -259,11 +327,11 @@
             </div>
 
             <div class="nav-menu-base">
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="tutorial.html">Tutorials</a></li>
-                    <li><a href="projek.html">Projects</a></li>
-                    <li><a href="about-us.html">About Us</a></li>
+                <ul class="ls-n">
+                    <li><a href="https://great-devs.github.io/index.html">Home</a></li>
+                    <li><a href="https://great-devs.github.io/tutorial.html">Tutorials</a></li>
+                    <li><a href="https://great-devs.github.io/projek.html">Projects</a></li>
+                    <li><a href="https://great-devs.github.io/about-us.html">About Us</a></li>
                 </ul>
             </div>
 
@@ -282,9 +350,9 @@
 
         <div id="menu-list-base" class="menu-list-base">
             <div class="menu-list">
-                <ul>
+                <ul class="ls-n">
                     <li>
-                        <a href="">Home</a>
+                        <a href="https://great-devs.github.io/index.html">Home</a>
                         <i class="fa-solid fa-house fa-sm c-white"></i>
                     </li>
                     <li>
@@ -304,7 +372,9 @@
         </div>
     </header>
 
-    <div id="overlay" class="overlay" onclick="oc_overlay()"></div>
+
+    <!-- <div id="overlay" class="overlay" onclick="oc_overlay()"></div> -->
+    <div class="space"></div>
 
     <main>
         <div class="main-base">
@@ -342,6 +412,7 @@
 
     </main>
 
+
     <footer>
         <div class="footer-top">
             <div class="site-title">
@@ -356,7 +427,7 @@
         <div class="footer-middle">
             <div class="connection-base">
                 <h4 class="footer-text-title">Get Connections</h4>
-                <ul>
+                <ul class="ls-n">
                     <li><a href="" class="fz-smal c-salmon">Github</a></li>
                     <li><a href="" class="fz-smal c-salmon">Youtube</a></li>
                     <li><a href="" class="fz-smal c-salmon">Instagram</a></li>
@@ -364,7 +435,7 @@
             </div>
             <div class="legal-base">
                 <p class="footer-text-title">Legal</p>
-                <ul>
+                <ul class="ls-n">
                     <li><a href="legal/privacy-policy.html" class="fz-smal c-salmon">Privacy Policy</a></li>
                 </ul>
             </div>
@@ -373,6 +444,10 @@
             <p>©2024 Great Devs</p>
         </div>
     </footer>
+
+
+    <!-- BLOCK Javascript -->
+
 
     <script>
         function oc_menu() {
