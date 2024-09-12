@@ -7,42 +7,34 @@
 
     <link rel="stylesheet" href="../../prismjs.com/prism.css">
     <style type="text/css">
+        /* ____________________ BEGIN General ____________________
+        */
         @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-
+        
         * {
             padding: 0;
             margin: 0;
             font-family: "Poppins", sans-serif;
             text-decoration: none;
-            list-style: none;
         }
 
-        .li-h-salmon,
+        /* List Style: None */
+        .ls-none { list-style: none; }
 
         .text-title {
             font-size: 24px;
             font-weight: 600;
         }
 
-        .fz-smal {
-            font-size: 18px;
-        }
+        .fz-smal { font-size: 18px; }
+        .fz-medium { font-size: 22px; }
+        .fz-big { font-size: 28px; }
 
-        .fz-medium {
-            font-size: 22px;
-        }
-
-        .fz-big {
-            font-size: 30px;
-        }
+        .fw-bold { font-weight: bold; }
 
         .img-fw {
             width: 100%;
             height: auto;
-        }
-
-        .fw-bold {
-            font-weight: bold;
         }
 
         .c-salmon { color: salmon; }
@@ -50,6 +42,8 @@
         .c-black-main { color: #24292E; }
         .c-white { color: white;}
         .c-white-soft { color: rgb(219, 219, 219);}
+        /* ____________________ END General ____________________
+        */
         
 
         .footer-text-title {
@@ -58,6 +52,8 @@
             color: #24292E;
         }
 
+        /* ____________________ BEGIN Custom ____________________
+        */
         header {
             width: 100%;
             height: auto;
@@ -140,18 +136,10 @@
             color: white;
         }
 
-        .overlay {
-            width: 100%;
-            height: 100%;
-            display: none;
-            background-color: rgba(189, 189, 189, 0.486);
-        }
-
-        /* Content Tutor */
         main {
             width: auto;
             height: auto;
-            background: rgb(223, 223, 223);
+            background: white;
         }
         main .main-base {
             width: auto;
@@ -169,17 +157,21 @@
             flex: 25%;
         }
         main .main-base .main-articles .middle {
-            background-color: green;
             height: auto;
             flex: 75%;
         }
-
+        main .main-base .main-articles .left .list-page {
+            width: auto;
+            height: 300px;
+            overflow: auto;
+        }
 
 
         footer {
             padding: 30px;
             width: auto;
             height: auto;
+            background-color: rgb(223, 223, 223);
         }
         footer .footer-top {
             width: 100%;
@@ -227,6 +219,9 @@
                 
             }
         }
+
+        /* ____________________ END Custom ____________________
+        */
 
     </style>
 
@@ -293,8 +288,6 @@
         </div>
     </header>
 
-    <!-- <div id="overlay" class="overlay" onclick="oc_overlay()"></div> -->
-
 
     <main>
         <div class="main-base">
@@ -307,19 +300,21 @@
                 <div class="left">
                     <p class="fz-medium fw-bold c-black-soft">Java OOP</p>
                     <br>
-                    <ul>
-                        <li><a href="">Introduce</a></li>
-                        <li><a href="">Class / Objects</a></li>
-                        <li><a href="">Attribute</a></li>
-                        <li><a href="">Method</a></li>
-                        <li><a href="">Constructor</a></li>
-                        <li><a href="">Modifiers</a></li>
-                        <li><a href="">Inner Class</a></li>
-                        <li><a href="">Inheritance</a></li>
-                        <li><a href="">Abstraction</a></li>
-                        <li><a href="">Polymorphism</a></li>
-                        <li><a href="">Encapsulation</a></li>
-                    </ul>
+                    <div class="list-page">
+                        <ul class="ls-none">
+                            <li><a href="">Introduce</a></li>
+                            <li><a href="">Class / Objects</a></li>
+                            <li><a href="">Attribute</a></li>
+                            <li><a href="">Method</a></li>
+                            <li><a href="">Constructor</a></li>
+                            <li><a href="">Modifiers</a></li>
+                            <li><a href="">Inner Class</a></li>
+                            <li><a href="">Inheritance</a></li>
+                            <li><a href="">Abstraction</a></li>
+                            <li><a href="">Polymorphism</a></li>
+                            <li><a href="">Encapsulation</a></li>
+                        </ul>
+                    </div>
                 </div>
 
                 <div class="middle">
@@ -346,7 +341,7 @@
         <div class="footer-middle">
             <div class="connection-base">
                 <h4 class="footer-text-title">Get Connections</h4>
-                <ul>
+                <ul class="ls-none">
                     <li><a href="" class="fz-smal c-salmon">Github</a></li>
                     <li><a href="" class="fz-smal c-salmon">Youtube</a></li>
                     <li><a href="" class="fz-smal c-salmon">Instagram</a></li>
@@ -354,7 +349,7 @@
             </div>
             <div class="legal-base">
                 <p class="footer-text-title">Legal</p>
-                <ul>
+                <ul class="ls-none">
                     <li><a href="legal/privacy-policy.html" class="fz-smal c-salmon">Privacy Policy</a></li>
                 </ul>
             </div>

@@ -3,17 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Great Devs | Java OOP Class/Objects </title>
+    <title>Glowy Engineer | Introduce Spring Web MVC</title>
 
-    <!-- Hightlight JS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
-    <link rel="stylesheet" href="../../hightlightjs/theme/atom-one-dark.min.css">
+    <link rel="icon" href="../resources/icon/ic_glowy_engineer.png" type="image/x-icon">
+
+    <!-- HightlightJs -->
+    <link rel="stylesheet" href="../hightlightjs/theme/atom-one-dark.min.css">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css"> -->
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlightjs-themes@1.0.0/darkula.css"> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
     <script>hljs.highlightAll();</script>
 
     <style type="text/css">
+        /* ____________________ BEGIN General ____________________
+        */
         @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-
+        
         * {
             padding: 0;
             margin: 0;
@@ -21,53 +26,54 @@
             text-decoration: none;
         }
 
+        body {
+            background-color: rgb(223, 223, 223);
+        }
+
         ul, ol {
             margin-left: 20px;
+            font-size: 20px;
         }
 
-        h1, h2, h3, h4, h5, h6 {
-            color: #24292E;
+        p {
+            font-size: 20px;
         }
 
-        .hightlight-1 {
-            background-image: linear-gradient(to right, rgb(248, 126, 112), rgb(223, 223, 223));
-            padding: 20px;
-        }
-
+        /* List Style: None */
+        .ls-none { list-style: none; }
 
         .text-title {
             font-size: 24px;
             font-weight: 600;
         }
 
-        .fz-smal {
-            font-size: 18px;
-        }
+        .fz-smal { font-size: 18px; }
+        .fz-medium { font-size: 22px; }
+        .fz-big { font-size: 28px; }
 
-        .fz-medium {
-            font-size: 22px;
-        }
-
-        .fz-big {
-            font-size: 30px;
-        }
+        .fw-bold { font-weight: bold; }
 
         .img-fw {
             width: 100%;
             height: auto;
         }
-
-        .fw-bold {
-            font-weight: bold;
+        .img-main {
+            margin-left: auto;
+            margin-right: auto;
+            display: block;
+            width: 600px;
+            height: 400px;
         }
 
-        .code-mark {
-            background-color: rgb(206, 206, 206);
-            color: rgb(209, 93, 93);
-            border-radius: 5px;
-            padding-left: 5px;
-            padding-right: 5px;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        .c-salmon { color: salmon; }
+        .c-black-soft { color: rgb(77, 77, 77); }
+        .c-black-main { color: #24292E; }
+        .c-white { color: white;}
+        .c-white-soft { color: rgb(219, 219, 219);}
+
+        /* Background Hightlight Salmon To Right Salmon Transparant White */
+        .bg-hglth-toright-salmon-twhite {
+
         }
 
         pre code.hljs {
@@ -76,27 +82,22 @@
             border-left: solid salmon 5px;
             font-size: 15px;
         }
-
-        .ls-n {
-            list-style: none;
-        }
-
-        .c-salmon { color: salmon; }
-        .c-black-soft { color: rgb(77, 77, 77); }
-        .c-black-main { color: #24292E; }
-        .c-white { color: white;}
-        .c-white-soft { color: rgb(219, 219, 219);}
+        /* ____________________ END General ____________________
+        */
         
+
         .footer-text-title {
             font-size: 22px;
             font-weight: 400;
             color: #24292E;
         }
 
+        /* ____________________ BEGIN Custom ____________________
+        */
         header {
             width: 100%;
             height: auto;
-            position: fixed;
+            position: sticky;
         }
 
         header .nav-base {
@@ -175,19 +176,6 @@
             color: white;
         }
 
-        .overlay {
-            width: 100%;
-            height: 100%;
-            display: none;
-            background-color: rgba(189, 189, 189, 0.486);
-        }
-
-        .space {
-            width: 100%;
-            height: 90px;
-        }
-
-
         main {
             width: auto;
             height: auto;
@@ -201,16 +189,7 @@
         main .main-base .main-articles {
             width: 100%;
             height: auto;
-            display: flex;
-            flex-direction: row;
-        }
-        main .main-base .main-articles .left {
-            height: auto;
-            flex: 25%;
-        }
-        main .main-base .main-articles .middle {
-            height: auto;
-            flex: 75%;
+            display: block;
         }
 
         footer {
@@ -234,9 +213,18 @@
         }
 
         @media screen and (max-width: 830px) {
+            /* BEGIN General
+            */
+            .img-main {
+                width: 80%;
+                height: auto;
+            }
             .text-title {
                 font-size: 20px;
             }
+
+            /* END General
+            */
 
             header .nav-base {
                 display: grid;
@@ -257,9 +245,6 @@
                 display: none;
             }
 
-            main .main-base .main-articles .left {
-                margin-bottom: 20px;
-            }
             main .main-base .main-articles {
                 flex-direction: column;
             }
@@ -268,6 +253,9 @@
                 
             }
         }
+
+        /* ____________________ END Custom ____________________
+        */
 
     </style>
 
@@ -282,16 +270,16 @@
         <div class="nav-base">
             <div class="site-title-base">
                 <div class="site-title">
-                    <p><a class="text-title c-white-soft" href="https://great-devs.github.io/index.html">| Great Dev<span class="c-salmon">eloper</span>s</a></p>
+                    <p><a class="text-title c-white-soft" href="index.html">| Glowy <span class="c-salmon">Engineer</span></a></p>
                 </div>
             </div>
 
             <div class="nav-menu-base">
                 <ul>
-                    <li><a href="https://great-devs.github.io/index.html">Home</a></li>
-                    <li><a href="https://great-devs.github.io/tutorial.html">Tutorials</a></li>
-                    <li><a href="https://great-devs.github.io/projek.html">Projects</a></li>
-                    <li><a href="https://great-devs.github.io/about-us.html">About Us</a></li>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="tutorial.html">Tutorials</a></li>
+                    <li><a href="projek.html">Projects</a></li>
+                    <li><a href="about-us.html">About Us</a></li>
                 </ul>
             </div>
 
@@ -333,77 +321,90 @@
     </header>
 
 
-    <!-- <div id="overlay" class="overlay" onclick="oc_overlay()"></div> -->
-    <div class="space"></div>
-
     <main>
-        <p class="fz-big fw-bold c-black-soft hightlight-1">Java OOP | Class/Objects</p>
         <div class="main-base">
+            <p class="fz-medium fw-bold c-black-soft">Pendahuluan Spring Web MVC (Model-View-Controller)</p>
+            <br>
+            <div class="main-articles">
+                <p>
+                    Spring Web MVC adalah kerangkar kerja dari <i>Spring Framework</i> dengan <i>pattern</i> MVC (Model-View-Controller).
+                    Spring MVC ini berfungsi untuk menghandle permintaan dari pengguna melalui <i>UI/Front End</i>, ketika pengguna mengakses website
+                    maka akan mengakses halaman html, disitulah yang akan di handle oleh MVC, pola MVC ini sangat umum sekali pada website saat ini.
+                    Untuk cara kerja dari Spring MVC bisa dilihat dalam gambar dibawah.
+                </p>
+                <img class="img-main" src="../resources/image/img_flow_spring_mvc.png" alt="">
+                <p>
+                    Pada gambar terdapat objek <i>Controller</i>, disitulah kelas yang berisi hal-hal untuk menangani permintaan dari pengguna. Langsung saja ke contoh.
+                </p>
+                <br>
+                <p class="fz-smal fw-bold c-black-soft">Contoh Spring Web MVC</p>
+                <p>
+                    Untuk contoh ini sangat sederhana, hanya akan membuat 1 <i>request</i> yaitu GET, mengakses file html kemudian dengan parameter untuk memberikan data ke
+                    <i>Controller</i>, lalu data akan ditampilkan ke halaman web. Pertama buat projek Spring Boot, kemudian untuk <i>dependency</i> yang dibutuhkan:
+                </p>
+                    <ul>
+                        <li>Spring Web</li>
+                        <li>Spring Thymleaf</li>
+                    </ul>
+                <p>
+                    Lalu kita buat kelas <i>Controller</i>, nama bebas. Untuk contoh ini saya namai WebController.java
+                </p>
+                <pre><code class="language-java">
+package ifandika.springmvc.main.controller;
 
-            <div class="main-articles">    
-                <div class="left">
-                    <p class="fz-medium fw-bold c-black-soft">Daftar Isi</p>
-                </div>
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
-                <div class="middle">
-                    <P>
-                        Kelas dalam OOP adalah sebuah representasi objek yang akan dibuat, semisal kita ingin membuat objek mobil, 
-                        maka kita kelas representasi tersebut kita namai <i>Car</i>. Untuk objek adalah hasil dari kelas tersebut yang
-                        nantinya kita bisa gunakan. Objek memiliki masa hidup, umumnya objek akan ada ketika aplikasi/sistem berlajar atau
-                        sedang digunakan & akan mati/hancur ketika aplikasi berhenti digunakan.
-                    </P>
-                    <br>
-                    <h2>Membuat Kelas</h2>
-                    <p>
-                        Untuk membuat kelas semisal <i>Car</i>.
-                        <pre><code class="language-java">
-class Car {
-    ...
+@Controller
+public class WebController {
+
+    @GetMapping(path = "/home")
+    public String home(@RequestParam(name = "name", required = false, defaultValue = "user") String name, Model model) {
+    model.addAttribute("name", name);
+    return "home";
+    }
 }
-                        </code></pre>
-                        Ket.
-                        <ul>
-                            <li>class | <i>Keyword</i> untuk membuat kelas</li>
-                            <li>Car | Nama kelas yang dibuat</li>
-                        </ul>
-                    </p>
-
-                    <br>
-                    <h2>Membuat Objek</h2>
-                    <p>
-                        Untuk membuat objek dari kelas yang telah kita buat, semisal kita ingin membuat objek dari kelas <i>Car</i> diatas.
-                        <pre><code class="language-java">
-Car myCar = new Car();
-                        </code></pre>
-                        Jika dengan kelas maka kita bisa membuat objek <i>Car</i> lagi dengan nama yang berbeda, nama harus beda.
-                        <pre><code class="language-java">
-Car momCar = new Car();
-Car dadCar = new Car();
-Car myCar = new Car();
-                        </code></pre>
-                        Untuk cara lain membuat objek.
-                        <pre><code class="language-java">
-new Car();
-// Membuat objek
-Car car = new Car(new Engine());
-                        </code></pre>
-                        Ini biasanya dilakukan di input parameter, jadi butuh objek namun hanya untuk menampung data atau hanya
-                        memerlukan suatu objekB untuk membuat objekA.
-                    </p>
-
-                </div>
+                </code></pre>
+                <p>
+                    Pertama kelas kita beri anotasi @Controller, dimana ini menandakan kelas ini sebagai kelas <i>Controller</i>. Kemudian kita buat fungsi home() dengan
+                    anotasi @GetMapping, fungsi ini untuk <i>method</i> GET dengan path/url "/home" (localhost:8080/home). Lalu untuk parameter fungsi ini ada String name
+                    ditandai anotasi @RequestParam, berarti ini untuk parameter pada url/path, dimana nama dari atribut param ini "name", required kita set ke false agar tidak
+                    wajib diberikan, dan defaultValue kita beri "user". Lalu ada Model, model ini digunakan untuk menyimpan data yang nantinya bisa kita ambil untuk ditampilkan
+                    ke halaman web. Setelah itu kita buat file HTML pada direktori "resources/templates" dengan nama home.html
+                </p>
+                <pre><code class="html">
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en" xmlns:th="http://www.thymeleaf.org"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Home Spring MVC&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h2 th:text="|hello, ${name}|"/&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+                </code></pre>
+                <p>
+                    Lalu kita jalankan projek spring mvc-nya, kemudian kita akses dengan url "localhost:8080/home", maka hasilnya.
+                </p>
+                <img class="img-main" src="../resources/image/img_ss_spring_mvc_test1.png" alt="">
+                <p>
+                    Kemudian jika kita jalankan projek spring mvc-nya, kemudian kita akses dengan url "localhost:8080/home?name=doni", maka hasilnya.
+                </p>
+                <img class="img-main" src="../resources/image/img_ss_spring_mvc_test2.png" alt="">
             </div>
         </div>
     </main>
 
-
     <footer>
         <div class="footer-top">
             <div class="site-title">
-                <a href="index.html"><p class="text-title c-black-soft">| Great Dev<span class="c-salmon">eloper</span>s</p></a>
+                <a href="index.html"><p class="text-title c-black-soft">| Glowy <span class="c-salmon">Engineer</span></p></a>
             </div>
             <div class="desc">
-                <p>Great Devs adalah tempat belajar untuk menjadi developer yang lebih baik, dengan
+                <p>Glowy Engineer adalah tempat belajar untuk menjadi <i>engineer</i> yang lebih baik, dengan
                     materi belajar yang lengkap dan tentunya terkini.
                 </p>
             </div>
@@ -411,7 +412,7 @@ Car car = new Car(new Engine());
         <div class="footer-middle">
             <div class="connection-base">
                 <h4 class="footer-text-title">Get Connections</h4>
-                <ul class="ls-n">
+                <ul class="ls-none">
                     <li><a href="" class="fz-smal c-salmon">Github</a></li>
                     <li><a href="" class="fz-smal c-salmon">Youtube</a></li>
                     <li><a href="" class="fz-smal c-salmon">Instagram</a></li>
@@ -419,19 +420,15 @@ Car car = new Car(new Engine());
             </div>
             <div class="legal-base">
                 <p class="footer-text-title">Legal</p>
-                <ul class="ls-n">
+                <ul class="ls-none">
                     <li><a href="legal/privacy-policy.html" class="fz-smal c-salmon">Privacy Policy</a></li>
                 </ul>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>©2024 Great Devs</p>
+            <p>©2024 Glowy Engineer</p>
         </div>
     </footer>
-
-
-    <!-- BLOCK Javascript -->
-
 
     <script>
         function oc_menu() {
