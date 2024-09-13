@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glowy Engineer | Leetcode EASY 125 Valid Palindrome</title>
+    <link rel="icon" href="../../resources/icon/ic_glowy_engineer.png" type="image/x-icon">
+    <!-- Hightlight JS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlightjs-themes@1.0.0/darkula.css"> -->
+    <link rel="stylesheet" href="../../hightlightjs/theme/atom-one-dark.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <!-- and it's easy to individually load additional languages -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/go.min.js"></script>
+    <script>hljs.highlightAll();</script>
+
+    <style type="text/css">
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+        * {
+            padding: 0;
+            margin: 0;
+            font-family: "Poppins", sans-serif;
+            text-decoration: none;
+        }
+        
+        p {
+            font-size: 18px;
+        }
+        .ls-none {
+          list-style: none;
+        }
+        
+        ul, ol {
+            margin-left: 20px;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            color: #24292E;
+        }
+
+        .hightlight-1 {
+            background-image: linear-gradient(to right, rgb(248, 126, 112), rgb(223, 223, 223));
+            padding: 20px;
+        }
+
+
+        .text-title {
+            font-size: 20px;
+            font-weight: 600;
+        }
+
+        .fz-smal {
+            font-size: 18px;
+        }
+
+        .fz-medium {
+            font-size: 20px;
+        }
+
+        .fz-big {
+            font-size: 25px;
+        }
+
+        .img-fw {
+            width: 100%;
+            height: auto;
+        }
+
+        .fw-bold {
+            font-weight: bold;
+        }
+
+        .code-mark {
+            background-color: rgb(206, 206, 206);
+            color: rgb(209, 93, 93);
+            border-radius: 5px;
+            padding-left: 5px;
+            padding-right: 5px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        pre code.hljs {
+            padding-top: 0;
+            padding-bottom: 0;
+            border-left: solid salmon 5px;
+            font-size: 15px;
+        }
+
+        .ls-n {
+            list-style: none;
+        }
+
+        .c-salmon { color: salmon; }
+        .c-black-soft { color: rgb(77, 77, 77); }
+        .c-black-main { color: #24292E; }
+        .c-white { color: white;}
+        .c-white-soft { color: rgb(219, 219, 219);}
+        
+        .footer-text-title {
+            font-size: 22px;
+            font-weight: 400;
+            color: #24292E;
+        }
+        
+        .lvl-easy {
+            background-image: linear-gradient(to right, green, white);
+            padding-left: 5px;
+            color: white;
+        }
+        .lvl-medium {
+            background-image: linear-gradient(to right, orange, white);
+            padding-left: 5px;
+            color: white;
+        }
+        .lvl-hard {
+            background-image: linear-gradient(to right, red, white);
+            padding-left: 5px;
+            color: white;
+        }
+
+        header {
+            width: 100%;
+            height: auto;
+            position: fixed;
+        }
+
+        header .nav-base {
+            background-color: #24292E;
+            display: grid;
+            grid-template-columns: 30% 50% 20%;
+            width: auto;
+            height: 40px;
+            padding-top: 25px;
+            padding-left: 30px;
+            padding-right: 30px;
+            padding-bottom: 25px;
+        }
+
+        header .nav-base .site-title-base {
+            height: auto;
+            left: 0;
+        }
+
+        header .nav-base .nav-menu-base {
+            text-align: center;
+            /* Jika display flex gunakan align-self */
+            align-self: center;
+        }
+        header .nav-base .nav-menu-base ul {
+            list-style: none;
+        }
+        header .nav-base .nav-menu-base ul li {
+            display: inline-block;
+            margin-right: 15px;
+        }
+        header .nav-base .nav-menu-base ul li a {
+            text-decoration: none;
+            font-size: 20px;
+            font-weight: 400;
+            color: rgb(219, 219, 219);
+        }
+        header .nav-base .nav-menu-base ul li a:hover {
+            color: salmon;            
+        }
+
+        header .nav-base .nav-button-base {
+            display: flex;
+            right: 0;
+            flex-direction: row-reverse;
+            height: auto;
+        }
+        header .nav-base .nav-button-base .nav-button-menu {
+            display: none;
+        }
+        header .nav-base .nav-button-base div {
+            align-self: center;
+        }
+        header .nav-base .nav-button-base .nav-button-search i,
+        header .nav-base .nav-button-base .nav-button-mode i {
+            margin-right: 25px;
+        }
+
+        header .menu-list-base {
+            width: auto;
+            height: auto;
+            background-color: #24292E;
+            display: none;
+        }
+        header .menu-list-base .menu-list ul li {
+            text-align: end;
+            padding-right: 30px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+        header .menu-list-base .menu-list ul li:hover {
+            background-color: salmon;
+        }
+        header .menu-list-base .menu-list ul li a {
+            text-decoration: none;
+            color: white;
+        }
+
+        .overlay {
+            width: 100%;
+            height: 100%;
+            display: none;
+            background-color: rgba(189, 189, 189, 0.486);
+        }
+
+        .space {
+            width: 100%;
+            height: 90px;
+        }
+
+
+        main {
+            width: auto;
+            height: auto;
+            background: white;
+        }
+        main .main-base {
+            width: auto;
+            height: auto;
+            padding: 20px;
+        }
+        main .main-base .main-articles {
+            width: 100%;
+            height: auto;
+            display: flex;
+            flex-direction: row;
+        }
+        main .main-base .main-articles .left {
+            height: auto;
+            flex: 25%;
+        }
+        main .main-base .main-articles .middle {
+            height: auto;
+            margin-left: 10px;
+            flex: 75%;
+        }
+        
+        .list-scroll {
+            width: 100%;
+            min-height: 0;
+            max-height: 100vh;
+            overflow: auto;
+        }
+
+        footer {
+            background-color: rgb(223, 223, 223);
+            padding: 30px;
+            width: auto;
+            height: 100%;
+        }
+        footer .footer-top {
+            width: 100%;
+            height: auto;
+        }
+        footer .footer-middle {
+            margin-top: 40px;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(0, 400px, auto));
+            gap: 20px;
+        }
+        footer .footer-bottom {
+            margin-top: 20px;
+        }
+
+        @media screen and (max-width: 830px) {
+            .text-title {
+                font-size: 20px;
+            }
+
+            header .nav-base {
+                display: grid;
+                grid-template-columns: 65% 0 35%;
+                height: 40px;
+                padding-left: 25px;
+                padding-right: 25px;
+            }
+
+            header .nav-base .nav-button-base .nav-button-menu {
+                display: inline-block;
+            }
+
+            header .nav-base .nav-menu-base {
+                width: auto;
+            }
+            header .nav-base .nav-menu-base ul {
+                display: none;
+            }
+
+            main .main-base .main-articles .left {
+                margin-bottom: 20px;
+            }
+            main .main-base .main-articles {
+                flex-direction: column;
+            }
+
+            footer .footer-middle {
+                
+            }
+        }
+
+    </style>
+
+    <!-- Bootstrapt icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!-- Fontawsome -->
+    <script src="https://kit.fontawesome.com/1f47b25c6e.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <div class="nav-base">
+            <div class="site-title-base">
+                <div class="site-title">
+                    <p><a class="text-title c-white-soft" href="index.html">| Glowy <span class="c-salmon">Engineer</span></a></p>
+                </div>
+            </div>
+
+            <div class="nav-menu-base">
+                <ul class="ls-none">
+                    <li><a href="https://great-devs.github.io/index.html">Home</a></li>
+                    <li><a href="https://great-devs.github.io/tutorial.html">Tutorials</a></li>
+                    <li><a href="https://great-devs.github.io/projek.html">Projects</a></li>
+                    <li><a href="https://great-devs.github.io/about-us.html">About Us</a></li>
+                </ul>
+            </div>
+
+            <div class="nav-button-base">
+                <div class="nav-button-menu">
+                    <i class="fa-solid fa-bars fa-sm c-white-soft"onclick="oc_menu()" aria-hidden="true"></i>
+                </div>
+                <div class="nav-button-mode">
+                    <i id="ic_mode" class="bi bi-brightness-high fa-sm c-white-soft" onclick="oc_mode('ic_mode')" aria-hidden="true"></i>
+                </div>
+                <div class="nav-button-search">
+                    <i class="fa-brands fa-searchengin fa-sm c-white-soft"></i>
+                </div>
+            </div>
+        </div>
+
+        <div id="menu-list-base" class="menu-list-base">
+            <div class="menu-list">
+                <ul class="ls-none">
+                    <li>
+                        <a href="https://great-devs.github.io/index.html">Home</a>
+                        <i class="fa-solid fa-house fa-sm c-white"></i>
+                    </li>
+                    <li>
+                        <a href="">Tutorials</a>
+                        <i class="fa-solid fa-code fa-sm c-white"></i>
+                    </li>
+                    <li>
+                        <a href="">Projects</a>
+                        <i class="fa-solid fa-layer-group fa-sm c-white"></i>
+                    </li>
+                    <li>
+                        <a href="">About Us</a>
+                        <i class="fa-solid fa-user fa-sm c-white"></i>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <div class="space"></div>
+
+    <main>
+        <p class="fz-medium fw-bold c-black-soft hightlight-1">Leetcode Solution <br/> [EASY] 125 Valid Palindrome</p>
+        <div class="main-base">
+
+            <div class="main-articles">    
+                <div class="left">
+                    <p class="fz-smal fw-bold c-black-soft">Leetcode Problem List</p>
+                    <div class="list-scroll">
+                      <p class="fz-smal lvl-easy" onclick="problem_level_easy_list()">
+                        <i class="bi bi-caret-down"></i>
+                        Easy
+                      </p>
+                      <ul id="problem_list_easy" class="ls-none">
+                        <li><a href="#">Two Sum</a></li>
+                        <li><a href="#">Add Two Numbers</a></li>
+                        <li><a href="#">Longest Substring Without Repeating Characters</a></li>
+                        <li><a href="#">Median of Two Sorted Arrays</a></li>
+                        <li><a href="#">Longest Palindromic Substring</a></li>
+                        <li><a href="#">Two Sum</a></li>
+                        <li><a href="#">Two Sum</a></li>
+                        <li><a href="#">Two Sum</a></li>
+                        <li><a href="#">Two Sum</a></li>
+                        <li><a href="#">Two Sum</a></li>
+                        <li><a href="#">Two Sum</a></li>
+                        <li><a href="#">Two Sum</a></li>
+                        <li><a href="#">Two Sum</a></li>
+                        <li><a href="#">Two Sum</a></li>
+                        <li><a href="#">Two Sum</a></li>
+                        <li><a href="#">Two Sum</a></li>
+                        <li><a href="#">Two Sum</a></li>
+                        <li><a href="#">Two Sum</a></li>
+                        <li><a href="#">Two Sum</a></li>
+                        <li><a href="#">Two Sum</a></li>
+                        <li><a href="#">Two Sum</a></li>
+                        <li><a href="#">Two Sum</a></li>
+                        <li><a href="#">Two Sum</a></li>
+                        <li><a href="#">Two Sum</a></li>
+                      </ul>
+
+                      <p class="fz-smal lvl-medium" onclick="problem_level_medium_list()">
+                        <i class="bi bi-caret-down"></i>
+                        Medium
+                      </p>
+                      <ul id="problem_list_medium" class="ls-none">
+                        <li><a href="">Problem</a></li>
+                        <li><a href="">Problem</a></li>
+                        <li><a href="">Problem</a></li>
+                        <li><a href="">Problem</a></li>
+                        <li><a href="">Problem</a></li>
+                        <li><a href="">Problem</a></li>
+                        <li><a href="">Problem</a></li>
+                        <li><a href="">Problem</a></li>
+                      </ul>
+
+                      <p class="fz-smal lvl-hard" onclick="problem_level_hard_list()">
+                        <i class="bi bi-caret-down"></i>
+                        Hard
+                      </p>
+                      <ul id="problem_list_hard" class="ls-none">
+                        <li><a href="">Problem</a></li>
+                        <li><a href="">Problem</a></li>
+                        <li><a href="">Problem</a></li>
+                        <li><a href="">Problem</a></li>
+                        <li><a href="">Problem</a></li>
+                        <li><a href="">Problem</a></li>
+                      </ul>
+
+                    </div>
+                </div>
+
+                <div class="middle">
+                  <p class="fz-medium c-black-main"><b>Problem</b></p>
+                  <p>
+                    A phrase is a palindrome if, after converting all uppercase letters into lowercase letters and removing all non-alphanumeric characters, it reads the same forward and backward. Alphanumeric characters include letters and numbers.<br/>
+                    Given a string s, return true if it is a palindrome, or false otherwise.
+                  </p>
+                  <br>
+                  <p>
+                    Example 1:
+                </p>
+                    <br>
+                    <ul class="ls-none">
+                        <li>Input: s = "A man, a plan, a canal: Panama"</li>
+                        <li>Output: true</li>
+                        <li>Explanation: "amanaplanacanalpanama" is a palindrome.</li>
+                    </ul>
+                    <P>Example 2:</P>
+                    <ul class="ls-none">
+                        <li>Input: s = "race a car"</li>
+                        <li>Output: false</li>
+                        <li>Explanation: "raceacar" is not a palindrome.</li>
+                    </ul>
+                    <P>Example 3:</P>
+                    <ul class="ls-none">
+                        <li>Input: s = " "</li>
+                        <li>Output: true</li>
+                        <li>Explanation: s is an empty string "" after removing non-alphanumeric characters.
+                            Since an empty string reads the same forward and backward, it is a palindrome.
+                        </li>
+                    </ul>
+                  
+                  <p class="fz-medium c-black-main"><b>Constraint</b></p>
+                  <ul>
+                    <li>1 <= s.length <= 2 * 105</li>
+                    <li>s consists only of printable ASCII characters.</li>
+                  </ul>
+
+                  <br>
+
+                  <p class="fz-medium c-black-main"><b>Solution</b></p>
+                  <p class="fz-smal c-black-main"><b>Java</b></p>
+                  <pre><code class="java">
+class Solution {
+    public boolean isPalindrome(String s) {
+        String lower = s.toLowerCase();
+        int left = 0,
+            right = s.length() - 1;
+
+        while(left < right) {
+            while(left < right && !Character.isLetterOrDigit(lower.charAt(left))) {
+                left++;
+            }
+            while(right > left && !Character.isLetterOrDigit(lower.charAt(right))) {
+                right--;
+            }
+            if(lower.charAt(left) != lower.charAt(right)) {
+                return false;
+            }
+            left++;
+            right--;
+        }
+        return true;
+    }
+}
+                  </code></pre>
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+    <footer>
+        <div class="footer-top">
+            <div class="site-title">
+                <a href="index.html"><p class="text-title c-black-soft">| Glowy<span class="c-salmon">Engineer</span></p></a>
+            </div>
+            <div class="desc">
+                <p>Glowy Engineer adalah tempat belajar untuk menjadi developer yang lebih baik, dengan
+                    materi belajar yang lengkap dan tentunya terkini.
+                </p>
+            </div>
+        </div>
+        <div class="footer-middle">
+            <div class="connection-base">
+                <h4 class="footer-text-title">Get Connections</h4>
+                <ul class="ls-n">
+                    <li><a href="" class="fz-smal c-salmon">Github</a></li>
+                    <li><a href="" class="fz-smal c-salmon">Youtube</a></li>
+                    <li><a href="" class="fz-smal c-salmon">Instagram</a></li>
+                </ul>
+            </div>
+            <div class="legal-base">
+                <p class="footer-text-title">Legal</p>
+                <ul class="ls-n">
+                    <li><a href="legal/privacy-policy.html" class="fz-smal c-salmon">Privacy Policy</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>©2024 Glowy Engineer</p>
+        </div>
+    </footer>
+
+
+    <!-- BLOCK Javascript -->
+
+
+    <script>
+        function oc_menu() {
+            var menu_list = document.getElementById("menu-list-base");
+            var overlay = document.getElementById("overlay");
+
+            if(menu_list.style.display == "none") {
+                menu_list.style.display = "block";
+                overlay.style.display = "block";
+            }
+            else {
+                menu_list.style.display = "none";
+                overlay.style.display = "none";
+            }
+        }
+
+        function oc_overlay() {
+            var overlay = document.getElementById("overlay");
+            var menu_list = document.getElementById("menu-list-base");
+            if(overlay.style.display == "block") {
+                menu_list.style.display = "none";
+                overlay.style.display = "none";
+            }
+            else {
+                menu_list.style.display = "block";
+                overlay.style.display = "block";
+            }
+        }
+
+        function oc_mode(icon) {
+            if(document.getElementById(icon).className == "bi bi-brightness-high fa-sm c-white-soft") {
+                document.getElementById(icon).className = "bi bi-moon fa-sm c-white-soft";
+            }
+            else {
+                document.getElementById(icon).className = "bi bi-brightness-high fa-sm c-white-soft";
+            }
+        }
+        
+        function problem_level_easy_list() {
+          var problem_list = document.getElementById("problem_list_easy");
+          if(problem_list.style.display != "none") {
+            problem_list.style.display = "none";
+          }
+          else {
+            problem_list.style.display = "block";
+          }
+        }
+
+        function problem_level_medium_list() {
+          var problem_list = document.getElementById("problem_list_medium");
+          if(problem_list.style.display != "none") {
+            problem_list.style.display = "none";
+          }
+          else {
+            problem_list.style.display = "block";
+          }
+        }
+
+        function problem_level_hard_list() {
+          var problem_list = document.getElementById("problem_list_hard");
+          if(problem_list.style.display != "none") {
+            problem_list.style.display = "none";
+          }
+          else {
+            problem_list.style.display = "block";
+          }
+        }
+    </script>
+</body>
+</html>
